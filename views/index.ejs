@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <header>
+    <figure class="logo">
+      <img src="/images/Project_Logo-removebg-preview (2).png" alt="Our lost and found team logo">
+    </figure>
+
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+    <p>
+      A place for students to report lost or found items on campus.
+    </p>
+
+    <a class="button" href="#report">Report an Item</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Reported Items</h2>
+
+      <p>Entries marked demo are fictional examples.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Lost or Found</th>
+            <th>Location</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (var i = 0; i < items.length; i++) { %>
+            <tr>
+              <td><%= items[i].name %></td>
+              <td><%= items[i].type %></td>
+              <td><%= items[i].location %></td>
+              <td><%= items[i].description %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="report">
+      <h2>Report an Item</h2>
+
+      <% if (message !== '') { %>
+        <p class="error"><%= message %></p>
+      <% } %>
+
+      <form action="/report" method="POST">
+        <p>
+          <label for="name">Item name</label>
+        </p>
+
+        <input type="text" id="name" name="name" required>
+
+        <p>
+          <label for="type">Lost or found?</label>
+        </p>
+
+        <select id="type" name="type" required>
+          <option value="">Choose one</option>
+          <option value="Lost">Lost</option>
+          <option value="Found">Found</option>
+        </select>
+
+        <p>
+          <label for="location">
+            Where was it last seen or found?
+          </label>
+        </p>
+
+        <input type="text" id="location" name="location" required>
+
+        <p>
+          <label for="description">Description</label>
+        </p>
+
+        <textarea
+          id="description"
+          name="description"
+          rows="3"
+          required
+        ></textarea>
+
+        <p>
+          <button type="submit">Submit Report</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Lost and Found | INFR3120 Group Project</p>
+  </footer>
+</body>
 </html>
+
+
