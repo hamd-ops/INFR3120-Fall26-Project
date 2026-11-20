@@ -1,48 +1,79 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f2f2f2;
-  color: #222222;
-}
-
-header {
-  background-color: white;
-  padding: 25px;
-}
-
-.logo {
-  width: 180px;
-  margin: 0 auto;
-}
-
-.logo img {
-  width: 100%;
+  background-color: #f7f5f0;
+  color: #003C71;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
 h1, h2 {
-  color: #234879;
+  font-weight: 700;
 }
 
-.button, button {
-  background-color: #234879;
+.site-header {
+  background: linear-gradient(90deg, #E75D2A 40%, #0077CA 75%, #003C71 100%);
+  padding: 10px 0;
+}
+
+.site-header .nav-link {
   color: white;
-  padding: 12px 20px;
-  border: 1px solid #234879;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 16px;
 }
 
-main {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+.site-header .nav-link:hover,
+.site-header .nav-link.active {
+  background-color: #003C71;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-section {
+.site-header a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+.page-card {
   background-color: white;
-  padding: 20px;
-  margin: 0 0 20px;
+  border: 1px solid #d6dde5;
+  border-radius: 1rem;
+  color: inherit;
+  margin: 0 0 24px;
+}
+
+.team-logo {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+}
+
+.btn-primary {
+  --bs-btn-bg: #003C71;
+  --bs-btn-border-color: #003C71;
+  --bs-btn-hover-bg: #0077CA;
+  --bs-btn-hover-border-color: #0077CA;
+}
+
+.form-label {
+  font-size: 18px;
+}
+
+.form-control {
+  border-color: #8a9eab;
+  color: #003C71;
+}
+
+.site-footer {
+  background: linear-gradient(90deg, #E75D2A, #0077CA, #003C71);
+  color: white;
+  padding: 12px 0;
+}
+
+@media (max-width: 480px) {
+  .site-header .nav-link {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
 }
 
 table {
@@ -50,28 +81,11 @@ table {
 }
 
 th, td {
-  border: 1px solid #cccccc;
-  padding: 10px;
+  border: 1px solid #d6dde5;
+  padding: 12px;
   overflow-wrap: anywhere;
 }
 
 th {
   background-color: #e8eef5;
-}
-
-input, select, textarea {
-  width: 90%;
-  padding: 10px;
-  margin: 5px 0 10px;
-  border: 1px solid #999999;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
-.error {
-  color: #a02020;
-}
-
-footer {
-  padding: 15px;
 }
